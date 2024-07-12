@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.loginpage{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.error-message{
+    color: #f00;
+    font-weight: 200;
+    min-height: 20px !important;
+    max-height: 20px !important;
+}
+.pic {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("../../assets/nature1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+img {
+    width: 140px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #494954;
+}
+.otp-form {
+    width: 50%;
+    height: 100%;
+    background-color: #151535;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    h2 {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .email-otp-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .email-otp-input {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-size: 18px;
+        margin: 0 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+    
+    .otp-input:focus, .email-otp-input:focus {
+        border-color: #007bff;
+    }
+    
+    /* Button styles */
+    button {
+        width: 350px;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        background-color: #2020db;
+        border: 2px solid #1f1fff;
+        border-radius: 50px;
+        outline: none;
+        transition: .4s;
+        color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 15px;
+        cursor: pointer;
+        font-family: 'Figtree', sans-serif;
+        margin-top: 15px;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    p{
+        color: #fff;
+    }
+    .otpcount{
+        display: flex;
+    }
+    .resentOtp{
+        cursor: pointer;
+    }
+    .resentOtp:hover{
+        color: #0056b3;
+        cursor: pointer;
+    }
+    .resentOtpNumber{
+        margin-left: 40px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .pic {
+      display: none;
+    }
+    .otp-form {
+        width: 100%;
+    }
+    .inp {
+        width: 90%;
+        height: 50px;
+        max-height: 50px;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    button {
+        width: 90%;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        background-color: #2020db;
+        border: 2px solid #1f1fff;
+        border-radius: 50px;
+        outline: none;
+        transition: .4s;
+        color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 15px;
+        cursor: pointer;
+        font-family: 'Figtree', sans-serif;
+    }
+}
+
+@media only screen and (max-height: 450px) {
+    .pic {
+      display: none;
+    }
+
+    .otp-form {
+        width: 100%;
+    }
+    .inp {
+        width: 90%;
+        height: 50px;
+        max-height: 50px;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    button {
+        width: 90%;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        background-color: #2020db;
+        border: 2px solid #1f1fff;
+        border-radius: 50px;
+        outline: none;
+        transition: .4s;
+        color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 15px;
+        cursor: pointer;
+        font-family: 'Figtree', sans-serif;
+    }
+}

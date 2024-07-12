@@ -1,0 +1,17 @@
+<section>
+    <div class="justify-center items-center p-0 md:p-2 h-auto md:h-full">
+        <h2 class="text-3xl font-bold text-green-600">Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4"> 
+            <div *ngFor="let product of allproducts">
+                <article class="card bg-white rounded-lg shadow-md m-4 p-6">
+                    <img [src]="product.icon" alt="" class="w-full h-auto">
+                    <p class="text-lg font-semibold mt-4">{{product.name}}</p>
+                    <div class="flex justify-between mt-2">
+                        <span class="text-gray-500 line-through">{{product.o_price | currency:'KES':'symbol':'1.2-2'}}</span>
+                        <span class="text-green-600 font-semibold">{{product.c_price | currency:'KES':'symbol':'1.2-2'}}</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
