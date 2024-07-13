@@ -78,3 +78,51 @@
 .social-menu ul li:nth-child(4) a:hover{
     background-color: #E4405F;
 }
+
+.news-app-promo {
+    padding: 0.5em;
+    margin-top: 2em;
+    border-radius: 5px;
+  }
+  
+  .news-app-promo__section {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+  
+  .news-app-promo-text {
+    color: #fff;   
+    padding: 0 1em;
+    margin: 1em auto;
+    display: block;
+    text-align: center;
+  }
+  
+  .news-app-promo-text__tagline {
+    font-size: 1.09em;
+  }
+  
+  .news-app-promo-subsection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center; 
+    margin: 0 auto; 
+  }
+  
+  
+  .news-app-promo__play-store{
+    display: block;
+    width: 161px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  
+  .news-app-promo-subsection--link {
+    text-decoration: none;
+    border: 0;
+  }
