@@ -8,9 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent {
   images = [
-    '../../../../assets/onionimg.png',
-    '../../../../assets/pawpaw.jpg',
-    '../../../../assets/tomatoes.jpg'
+    '../../../../assets/onionimg.jpg',
+    '../../../../assets/pawpaw.png',
+    '../../../../assets/tomatoes.png'
   ];
 
   currentImageIndex = 0;

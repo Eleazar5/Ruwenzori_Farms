@@ -1,12 +1,4 @@
    <section>
-    <!-- <div class="main_container" [ngStyle]="{'background-image': 'url(' + images[currentImageIndex] + ')'}">
-      <div class="content flex justify-center items-center h-screen">
-        <div class="text-center w-3/4">
-          <h2>Welcome To Ruwenzori Farm </h2>
-          <p>We believe in Sustainable Farming, Superior Quality to bring you the freshest, most flavorful produce straight from our fields to your table. From onions, pawpaws, water melons, kales, spinach, sweet potatoes, we ensure that each bite is a burst of wholesome goodness. Discover the difference that farm-fresh quality makes in every meal, and join us in celebrating the pure, natural flavors that only a true family farm can offer.</p>
-        </div>
-      </div>
-    </div> -->
     <div class="flex flex-col md:flex-row justify-center items-center h-screen p-0 md:p-2">
       <div class="w-4/5 md:w-2/5 text-center p-5">
         <h2 class="text-green-600 text-4xl font-bold">Ruwenzori</h2>
@@ -18,9 +10,12 @@
         
         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-sm px-4 py-0 text-center dark:bg-blue-600 dark:hover:bg-blue-700" (click)="scrollToSection('contact')" [class.active]="activeSection === 'contact'">Contact us</button>
       </div>
-      <div class="hidden md:block">
-        <img src="../../../../assets/onionimg.jpg" alt="Agricultural Products" width="500px">
+      <div class="carousel">
+        <div class="hidden md:block">
+          <img *ngFor="let image of images; let i = index" [src]="image" alt="Agricultural Products" width="400px" [ngClass]="{'carousel-image': true, 'carousel-image-active': i === currentImageIndex}">
+        </div>
       </div>
+      
     </div>
   </section>
   
