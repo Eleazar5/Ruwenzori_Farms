@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-intro',
@@ -7,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent implements OnInit {
-  title: string = "Ruwenzori Farms";
+  title: string = environment.title;
   activeSection: string | null = null;
   isMenuOpen: boolean = false;  // Track the state of the menu
 

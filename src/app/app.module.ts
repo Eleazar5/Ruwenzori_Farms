@@ -26,6 +26,7 @@ import { AboutComponent } from './Components/Landing/about/about.component';
 import { ServicesComponent } from './Components/Landing/services/services.component';
 import { ContactComponent } from './Components/Landing/contact/contact.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { CookiesConsentComponent } from './Components/cookies-consent/cookies-consent.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FooterComponent } from './Components/footer/footer.component';
     AboutComponent,
     ServicesComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    CookiesConsentComponent
   ],
   imports: [
     BrowserModule,

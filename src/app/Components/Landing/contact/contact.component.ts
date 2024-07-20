@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
 interface Products {
   icon: string;
   name: string;
@@ -12,10 +14,8 @@ interface Products {
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  allproducts: Products[] = [
-    { icon: '../../../../assets/onion.png', name: 'Onions', o_price: 160, c_price: 150 },
-    { icon: '../../../../assets/watermelon.png', name: 'Water Melon', o_price: 150, c_price: 140 },
-    { icon: '../../../../assets/tomatoes.png', name: 'Tomatoes', o_price: 200, c_price: 180 },
-    { icon: '../../../../assets/pawpaw.png', name: 'Paw-paw', o_price: 130, c_price: 120 },
-  ];
+  phone_no:string = environment.phone_number
+  email:string = environment.email
+  facebook:string = environment.facebook_link
+  instagram:string = environment.instagram_link
 }

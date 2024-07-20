@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,15 @@ export class HomeComponent {
   intervalId: any;
   activeSection: string | null = null;
   isMenuOpen: boolean = false;
+
+  title:string = environment.title
+  facebook:string = environment.facebook_link
+  youtube:string = environment.youtube_link
+  twitter:string = environment.x_link
+  instagram:string = environment.instagram_link
+  phone_no:string = environment.phone_number
+  phone_no_2:string = environment.phone_number_2
+  email:string = environment.email
 
   constructor(
     private route: ActivatedRoute,

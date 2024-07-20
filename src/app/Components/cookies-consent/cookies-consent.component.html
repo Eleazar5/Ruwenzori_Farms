@@ -1,0 +1,73 @@
+   <div class="bg-white h-screen">
+    <nav appScrollSpy class="bg-white border-gray-200 dark:bg-gray-900 shadow-md">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="../../../assets/ruwenzorilogo1.png" class="h-[60px] w-auto" alt="Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ title }}</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Get started
+          </button>
+          <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between w-full md:flex md:w-auto md:order-1" [class.hidden]="!isMenuOpen">
+          <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a href="#home" class="block py-2 px-3 text-gray-900 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-gray-400" (click)="scrollToSection('home')" [class.active]="activeSection === 'home'">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="block py-2 px-3 text-gray-900 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-gray-400" (click)="scrollToSection('about')" [class.active]="activeSection === 'about'">About</a>
+            </li>
+            <li>
+              <a href="#services" class="block py-2 px-3 text-gray-900 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-gray-400" (click)="scrollToSection('services')" [class.active]="activeSection === 'services'">Products</a>
+            </li>
+            <li>
+              <a href="#contact" class="block py-2 px-3 text-gray-900 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-gray-400" (click)="scrollToSection('contact')" [class.active]="activeSection === 'contact'">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <section class="main_container1 w-full md:w-full p-5 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white">
+      <h4 class="text-xl font-semibold mb-2">What Are Cookies</h4>
+  
+      <p class="mb-4">Cookies are small pieces of text sent by your web browser by a website you visit. 
+        A cookie file is stored in your web browser and allows the Service or a third-party to recognize you and make your next visit easier and the Service more useful to you.</p>
+  
+      <h4 class="text-xl font-semibold mb-2">How We Use Cookies</h4>
+  
+      <p class="mb-4">When you use and access the Service, we may place a number of cookies files in your web browser. 
+        We use cookies for the following purposes:</p>
+      <ul class="list-disc pl-5 mb-4">
+        <li>To enable certain functions of the Service</li>
+        <li>To provide analytics</li>
+        <li>To store your preferences</li>
+        <li>To enable advertisements delivery, including behavioral advertising</li>
+      </ul>
+  
+      <h4 class="text-xl font-semibold mb-2">Types of Cookies We Use</h4>
+      <ol class="list-decimal pl-5 mb-4">
+        <li>Essential Cookies: We may use essential cookies to authenticate users and prevent fraudulent use of user accounts.</li>
+        <li>Performance Cookies: These cookies collect information about how you use our website, such as which pages you visited and which links you clicked on. None of this information can be used to identify you.</li>
+        <li>Functionality Cookies: These cookies allow our website to remember choices you have made in the past, like what language you prefer, or what your username and password are so you can automatically log in.</li>
+        <li>Advertising Cookies: These cookies are used to deliver advertisements that are relevant to you and your interests. They also limit the number of times you see an advertisement and help measure the effectiveness of the advertising campaign.</li>
+        <li>Third-Party Cookies: In addition to our own cookies, we may also use various third-parties cookies to report usage statistics of the Service, deliver advertisements on and through the Service, and so on.</li>
+      </ol>
+  
+      <h4 class="text-xl font-semibold mb-2">Your Choices Regarding Cookies</h4>
+  
+      <p class="mb-4">If you'd like to delete cookies or instruct your web browser to delete or refuse cookies, please visit the help pages of your web browser. However, please note that if you delete cookies or refuse to accept them, you might not be able to use all of the features we offer, you may not be able to store your preferences, and some of our pages might not display properly.</p>
+  
+      <h4 class="text-xl font-semibold mb-2">More Information</h4>
+  
+      <p>If you need more information about cookies, contact us at <a href="mailto:{{contactmail}}" class="no-underline">{{contactmail}}</a>.</p>
+    </section>
+  </div>
+  

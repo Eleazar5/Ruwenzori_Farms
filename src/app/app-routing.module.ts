@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginOtpComponent } from './login-otp/login-otp.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CookiesConsentComponent } from './Components/cookies-consent/cookies-consent.component';
 import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
   { 
     path: 'otp_verification', 
     component: LoginOtpComponent 
+  },
+  { 
+    path: 'dataprivacy', 
+    component: CookiesConsentComponent 
   },
   { 
     path: '**', 
