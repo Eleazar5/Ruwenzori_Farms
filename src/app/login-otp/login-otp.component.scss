@@ -1,12 +1,43 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 .loginpage{
     display: flex;
     width: 100vw;
     height: 100vh;
+
+    .pic {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(24, 84, 44, 0.5);
+    
+        .resetdivcard {
+            background-color: rgba(24, 84, 44, 0.7);
+            width: 80%;
+            height: 80%;
+            margin: 10%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+    
+            .getstartedtext {
+                position: absolute;
+                top: 20px;
+                font-weight: 500;
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+                color: #fff;
+            }
+    
+            .ladyimg {
+                width: 70%;
+                border: none;
+                margin: auto 0 0 0;
+            }
+        }
+    }
 }
 .error-message{
     color: #f00;
@@ -14,24 +45,11 @@
     min-height: 20px !important;
     max-height: 20px !important;
 }
-.pic {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    background-image: url("../../assets/nature1.jpg");
-    background-size: cover;
-    background-position: center;
-}
-img {
-    width: 140px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #494954;
-}
+
 .otp-form {
     width: 50%;
     height: 100%;
-    background-color: #151535;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +58,7 @@ img {
 
     h2 {
         margin-bottom: 20px;
-        color: #fff;
+        color: #666;
     }
     .email-otp-container {
         display: flex;
@@ -65,10 +83,8 @@ img {
     
     /* Button styles */
     button {
-        width: 350px;
-        height: 50px;
-        min-height: 50px;
-        max-height: 50px;
+        max-width: 350px;
+        height: 40px;
         background-color: #2020db;
         border: 2px solid #1f1fff;
         border-radius: 50px;
@@ -79,16 +95,13 @@ img {
         padding-right: 20px;
         font-size: 15px;
         cursor: pointer;
-        font-family: 'Figtree', sans-serif;
         margin-top: 15px;
     }
     
     button:hover {
         background-color: #0056b3;
     }
-    p{
-        color: #fff;
-    }
+  
     .otpcount{
         display: flex;
     }
