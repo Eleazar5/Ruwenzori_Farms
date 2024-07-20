@@ -1,0 +1,244 @@
+.resetpage{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+
+    .resetcontainer {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        margin: auto;
+    
+        .reset-card{
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        .reset-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .reset-card .subtitle {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .reset-card .social-reset {
+            margin-bottom: 20px;
+        }
+        
+        .reset-card .social-reset button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+        
+        .reset-form .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .reset-form .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+        
+        .reset-form .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password a {
+            color: #18542C;
+            text-decoration: none;
+            font-size: 0.8em;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .reset-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        
+        .reset-button:hover {
+            background-color: #3700b3;
+        }
+    }
+
+    .line-container {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        
+        .line {
+            flex-grow: 1;
+            border-bottom: 1px solid #ccc;
+        }
+        .text {
+            padding: 0 10px;
+            font-size: 0.8rem;
+        }
+    }
+    
+    .pic {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(24, 84, 44, 0.5);
+    
+        .resetdivcard {
+            background-color: rgba(24, 84, 44, 0.7);
+            width: 80%;
+            height: 80%;
+            margin: 10%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+    
+            .getstartedtext {
+                position: absolute;
+                top: 20px;
+                font-weight: 500;
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+                color: #fff;
+            }
+    
+            .ladyimg {
+                width: 70%;
+                border: none;
+                margin: auto 0 0 0;
+            }
+        }
+    }
+}
+    
+    
+
+.error-message{
+    color: #f00;
+    font-weight: 200;
+    min-height: 20px !important;
+    max-height: 20px !important;
+}
+@media only screen and (max-width: 770px) {
+    .pic {
+      display: none;
+    }
+    .resetpage{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+    
+        .resetcontainer {
+            width: 100%;
+
+            .reset-card{
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    .inp {
+        width: 90%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .reset-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #6200ea;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    
+    .reset-button:hover {
+        background-color: #3700b3;
+    }
+}
+
+@media only screen and (max-height: 450px) {
+    .pic {
+      display: none;
+    }
+
+    .resetpage{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+    
+        .resetcontainer {
+            width: 100%;
+
+            .reset-card{
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    .inp {
+        width: 90%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .reset-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #6200ea;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    
+    .reset-button:hover {
+        background-color: #3700b3;
+    }
+}

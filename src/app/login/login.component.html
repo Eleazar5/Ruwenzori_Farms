@@ -1,18 +1,48 @@
 <div class="loginpage">
-    <div class="pic"></div>
-    <form class="container" (ngSubmit)="login()">
-        <img src="../../assets/logo.png" alt="">
-        <h1>Log in To Continue</h1>
-        <div class="inp">
-            <input type="email" id="username" name="username" [(ngModel)]="username" placeholder="Email" (focus)="clearError()" required>
+    <div class="logincontainer">
+        <div class="login-card">
+            <h2>Login</h2>
+            <p class="subtitle">How do you want to get started?</p>
+            <div class="social-login">
+                <button class="google-login flex items-center px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
+                    <img src="../../../assets/google.png" alt="Google icon" width="20px" class="icon mr-2">
+                    Sign in with Google
+                </button>
+                <button class="google-login flex items-center px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
+                    <img src="../../../assets/facebook.png" alt="Google icon" width="25px" class="icon mr-2">
+                    Sign in with Facebook
+                </button>
+            </div>
+
+            <div class="line-container">
+                <div class="line"></div>
+                <div class="text">OR</div>
+                <div class="line"></div>
+              </div>
+
+            <form class="login-form" (ngSubmit)="login()">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="username" name="username" [(ngModel)]="username" placeholder="Enter your Email" (focus)="clearError()" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Enter your Password" (focus)="clearError()" required>
+                </div>
+
+                <div *ngIf="errorMessage" class="inp error-message">{{ errorMessage }}</div>
+                <div class="forgot-password">
+                    <a href="/reset_password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
         </div>
-        
-        <div class="inp">
-            <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Password" (focus)="clearError()" required>
+    </div>
+
+    <div class="pic">
+        <div class="logindivcard">
+            <p class="getstartedtext">Good Testimonials for our system. <br><span class="loginforstarts">Login to Get Started</span></p>
+            <img src="../../../assets/lady3.png" alt="" width="120px" class="ladyimg" />
         </div>
-        <div *ngIf="errorMessage" class="inp error-message">{{ errorMessage }}</div>
-        <div style="display: flex;"><a href="">Forgot Password?</a></div>
-        <button type="submit">Login</button>
-        <a routerLink="/register">Don't have an account? Sign up</a>
-    </form>
+    </div>
 </div>

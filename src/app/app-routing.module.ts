@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { IntroComponent } from './pages/intro/intro.component';
-import { RegisterComponent } from './register/register.component';
+import { ResetComponent } from './reset/reset.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginOtpComponent } from './login-otp/login-otp.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -24,12 +24,11 @@ const routes: Routes = [
     component: LoginComponent 
   },
   { 
-    path: 'register', 
-    component: RegisterComponent 
+    path: 'reset_password', 
+    component: ResetComponent 
   },
   { 
     path: 'home', 
-    // canActivate: [authGuard],
     component: HomepageComponent 
   },
   { 

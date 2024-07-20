@@ -1,0 +1,32 @@
+<div class="resetpage">
+    <div class="resetcontainer">
+        <div class="reset-card">
+            <h2>Reset Password</h2>
+            <p class="subtitle">Enter your details to recover your account</p>
+
+            <form class="reset-form" (ngSubmit)="reset_password()">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="username" name="username" [(ngModel)]="username" placeholder="Enter your Email" (focus)="clearError()" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">ID Number</label>
+                    <input type="text" id="idnumber" name="idnumber" [(ngModel)]="idnumber" placeholder="Enter your ID Number" (focus)="clearError()" required>
+                </div>
+
+                <div *ngIf="errorMessage" class="inp error-message">{{ errorMessage }}</div>
+                <div class="forgot-password">
+                    <a href="/login">Already have an account</a>
+                </div>
+                <button type="submit" class="reset-button">Reset</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="pic">
+        <div class="resetdivcard">
+            <p class="getstartedtext">Good Testimonials for our system. <br><span class="resetforstarts">Reset to Get Started</span></p>
+            <img src="../../../assets/lady3.png" alt="" width="120px" class="ladyimg" />
+        </div>
+    </div>
+</div>
