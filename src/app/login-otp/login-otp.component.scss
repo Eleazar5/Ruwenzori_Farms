@@ -78,15 +78,15 @@
     }
     
     .otp-input:focus, .email-otp-input:focus {
-        border-color: #007bff;
+        border-color: #18542C;
     }
     
     /* Button styles */
     button {
         max-width: 350px;
         height: 40px;
-        background-color: #2020db;
-        border: 2px solid #1f1fff;
+        background-color: #18542C;
+        border: 2px solid #18542C;
         border-radius: 50px;
         outline: none;
         transition: .4s;
@@ -99,7 +99,7 @@
     }
     
     button:hover {
-        background-color: #0056b3;
+        background-color: #18542C;
     }
   
     .otpcount{
@@ -109,7 +109,7 @@
         cursor: pointer;
     }
     .resentOtp:hover{
-        color: #0056b3;
+        color: #18542C;
         cursor: pointer;
     }
     .resentOtpNumber{
@@ -138,8 +138,8 @@
         height: 50px;
         min-height: 50px;
         max-height: 50px;
-        background-color: #2020db;
-        border: 2px solid #1f1fff;
+        background-color: #18542C;
+        border: 2px solid #18542C;
         border-radius: 50px;
         outline: none;
         transition: .4s;
@@ -174,8 +174,8 @@
         height: 50px;
         min-height: 50px;
         max-height: 50px;
-        background-color: #2020db;
-        border: 2px solid #1f1fff;
+        background-color: #18542C;
+        border: 2px solid #18542C;
         border-radius: 50px;
         outline: none;
         transition: .4s;
