@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
+  isSidebarToggled = true;
 
+  toggleSidebar() {
+    this.isSidebarToggled = !this.isSidebarToggled;
+  }
 }
