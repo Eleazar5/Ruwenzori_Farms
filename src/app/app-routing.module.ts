@@ -11,15 +11,6 @@ import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { 
-    path: '', 
-    pathMatch: 'full', 
-    redirectTo: '' 
-  },
-  { 
-    path: '', 
-    component: IntroComponent 
-  },
-  { 
     path: 'login', 
     component: LoginComponent 
   },
@@ -40,10 +31,14 @@ const routes: Routes = [
     component: CookiesConsentComponent 
   },
   { 
-    path: '**', 
-    canActivate: [authGuard],
-    component: PageNotFoundComponent 
+    path: '', 
+    pathMatch: 'full', 
+    component: IntroComponent // Set IntroComponent as the default component for the empty path
   },
+  { 
+    path: '**', 
+    component: PageNotFoundComponent 
+  }
 ];
 
 @NgModule({
