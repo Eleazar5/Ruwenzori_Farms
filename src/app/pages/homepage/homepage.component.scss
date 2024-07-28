@@ -14,7 +14,7 @@
 
   @media screen and (min-width: 768px) {
     &.toggled .page-content {
-      padding-left: 260px; // Adjusted to match sidebar width
+      padding-left: 270px; // Adjusted to match sidebar width
     }
   }
 
@@ -189,12 +189,13 @@
   .fa-bars {
     color: #000 !important;
     padding: 10px;
+    font-size: 20px;
   }
 
   .page-content {
     display: inline-block;
     width: 100%;
-    padding-left: 30px;
+    padding-left: 35px;
     padding-top: 20px;
     color: #000;
 
@@ -203,5 +204,17 @@
     }
 
     overflow-x: hidden;
+  }
+}
+.active-menu {
+  background-color: #343a40;
+  color: white; 
+
+  a {
+    color: white; 
+  }
+
+  i {
+    color: white; 
   }
 }
