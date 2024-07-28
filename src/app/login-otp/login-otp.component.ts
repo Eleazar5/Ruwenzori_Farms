@@ -39,7 +39,7 @@ export class LoginOtpComponent implements OnInit{
       (res: any) => {
         console.log(res);
         if (res.success === 1) {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/index']);
         }
       },
       (error: any) => {
@@ -108,7 +108,7 @@ export class LoginOtpComponent implements OnInit{
         }else{
           localStorage.removeItem('userMail');
           localStorage.setItem('userToken', res.token);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/index']);
         }
       },  
       (error: any) => {         

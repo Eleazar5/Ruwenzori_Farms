@@ -17,8 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthOtpComponent } from './models/auth-otp/auth-otp.component';
 import { LoginOtpComponent } from './login-otp/login-otp.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SidebarComponent } from './pages/sidebar/sidebar.component';
-import { HeaderComponent } from './pages/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { IntroComponent } from './pages/intro/intro.component';
 import { HomeComponent } from './Components/Landing/home/home.component';
@@ -27,6 +25,11 @@ import { ServicesComponent } from './Components/Landing/services/services.compon
 import { ContactComponent } from './Components/Landing/contact/contact.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { CookiesConsentComponent } from './Components/cookies-consent/cookies-consent.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { VendorsComponent } from './pages/vendors/vendors.component';
+import { SalesComponent } from './pages/sales/sales.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
+import { MessagesComponent } from './pages/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +41,6 @@ import { CookiesConsentComponent } from './Components/cookies-consent/cookies-co
     AuthOtpComponent,
     LoginOtpComponent,
     PageNotFoundComponent,
-    SidebarComponent,
-    HeaderComponent,
     DashboardComponent,
     IntroComponent,
     HomeComponent,
@@ -47,7 +48,12 @@ import { CookiesConsentComponent } from './Components/cookies-consent/cookies-co
     ServicesComponent,
     ContactComponent,
     FooterComponent,
-    CookiesConsentComponent
+    CookiesConsentComponent,
+    CustomersComponent,
+    VendorsComponent,
+    SalesComponent,
+    NotificationsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

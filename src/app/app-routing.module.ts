@@ -7,6 +7,15 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginOtpComponent } from './login-otp/login-otp.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CookiesConsentComponent } from './Components/cookies-consent/cookies-consent.component';
+
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { VendorsComponent } from './pages/vendors/vendors.component';
+import { SalesComponent } from './pages/sales/sales.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
+import { MessagesComponent } from './pages/messages/messages.component';
+
 import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -19,8 +28,18 @@ const routes: Routes = [
     component: ResetComponent 
   },
   { 
-    path: 'home', 
-    component: HomepageComponent 
+    path: 'index', 
+    component: HomepageComponent, children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'customers', pathMatch: 'full', component: CustomersComponent },
+      { path: 'vendors', pathMatch: 'full', component: VendorsComponent },
+      { path: 'sales', pathMatch: 'full', component: SalesComponent },
+      { path: 'profile', pathMatch: 'full', component: ProfileComponent },
+      { path: 'messages', pathMatch: 'full', component: MessagesComponent },
+      { path: 'notifications', pathMatch: 'full', component: NotificationsComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '**', component: PageNotFoundComponent }
+    ]
   },
   { 
     path: 'otp_verification', 
