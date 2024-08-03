@@ -1,0 +1,23 @@
+.card {
+	border-radius: 8px;
+	padding: 10px;
+	position: relative;
+
+	
+	.title {
+		display: inline-block;
+		font-size: 13px;
+		padding: 10px 10px 0;
+        letter-spacing: 1px;
+        font-weight: 500;
+	}
+	
+	.cardvalue {
+		font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+		padding: 5px 10px;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+	}
+}
