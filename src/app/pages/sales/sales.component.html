@@ -1,1 +1,50 @@
-<p>sales works!</p>
+<div class="container relative overflow-x-auto p-4">
+    <!-- Search and New Button -->
+    <div class="flex justify-between items-center mb-4">
+        <input type="text" id="searchInput" placeholder="Search..." class="border rounded px-2 py-1 w-1/2 md:w-1/4">
+        <div class="flex space-x-2">
+          <button class="bg-green-800 text-white py-1 px-4 rounded hover:bg-green-600" id="export-button">Export</button>
+          <button class="bg-green-800 text-white py-1 px-4 rounded hover:bg-green-600" id="new-button">New</button>
+        </div>
+    </div>      
+  
+    <!-- Table -->
+    <table class="min-w-full bg-white border border-gray-300 rounded shadow-md">
+      <thead class="bg-gray-100 border-b border-gray-300">
+        <tr>
+          <th class="py-2 px-4 text-left">ID</th>
+          <th class="py-2 px-4 text-left">Date</th>
+          <th class="py-2 px-4 text-left">Customer</th>
+          <th class="py-2 px-4 text-left">Description</th>
+          <th class="py-2 px-4 text-left">Amount</th>
+          <th class="py-2 px-4 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr>
+          <td class="py-2 px-4 border-b">1</td>
+          <td class="py-2 px-4 border-b">2024-08-03</td>
+          <td class="py-2 px-4 border-b">John Doe</td>
+          <td class="py-2 px-4 border-b">1kg of Onions</td>
+          <td class="py-2 px-4 border-b">Ksh. 140</td>
+          <td class="py-2 px-4 border-b">
+            <button class="bg-blue-500 text-white py-1 px-2 rounded hover:bg-blue-600 mr-2 mb-1">Edit</button>
+            <button class="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600 mr-2 mb-1">Delete</button>
+          </td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  
+    <!-- Pagination -->
+    <div class="mt-4 flex justify-between items-center">
+      <span class="text-gray-700">Showing 1-10 of 100</span>
+      <div class="flex space-x-2">
+        <button class="bg-gray-300 text-gray-700 py-1 px-3 rounded hover:bg-gray-400">Previous</button>
+        <button class="bg-gray-300 text-gray-700 py-1 px-3 rounded hover:bg-gray-400">1</button>
+        <button class="bg-gray-300 text-gray-700 py-1 px-3 rounded hover:bg-gray-400">2</button>
+        <button class="bg-gray-300 text-gray-700 py-1 px-3 rounded hover:bg-gray-400">Next</button>
+      </div>
+    </div>
+  </div>
+  
