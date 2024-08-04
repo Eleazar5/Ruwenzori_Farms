@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent {
+  isModalOpen = false;
 
+  toggleModal() {
+    this.isModalOpen = !this.isModalOpen;
+  }
 }
