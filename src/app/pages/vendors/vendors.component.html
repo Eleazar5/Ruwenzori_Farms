@@ -1,4 +1,4 @@
-<div class="container relative overflow-x-auto p-4">
+<div class="container relative p-4">
     <!-- Search and New Button -->
     <div class="flex justify-between items-center mb-4">
         <input type="text" id="searchInput" placeholder="Search..." class="border rounded px-2 py-1 w-1/2 md:w-1/4">
@@ -9,31 +9,33 @@
     </div>
   
     <!-- Table -->
-    <table class="min-w-full bg-white border border-gray-300 rounded shadow-md">
-      <thead class="bg-gray-100 border-b border-gray-300">
-        <tr>
-          <th class="py-2 px-4 text-left">ID</th>
-          <th class="py-2 px-4 text-left">Name</th>
-          <th class="py-2 px-4 text-left">Phone</th>
-          <th class="py-2 px-4 text-left">Email</th>
-          <th class="py-2 px-4 text-left">Actions</th>
-        </tr>
-      </thead>
-      <tbody id="table-body">
-        <tr>
-          <td class="py-2 px-4 border-b">1</td>
-          <td class="py-2 px-4 border-b">Jane Doe</td>
-          <td class="py-2 px-4 border-b">0706083697</td>
-          <td class="py-2 px-4 border-b">jane.doe@example.com</td>
-          <td class="py-2 px-4 border-b">
-            <button class="bg-blue-500 text-white py-1 px-2 rounded hover:bg-blue-600 mr-2 mb-1">Edit</button>
-            <button class="bg-green-500 text-white py-1 px-2 rounded hover:bg-grren-600 mr-2 mb-1">Contact</button>
-            <button class="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600 mr-2 mb-1">Delete</button>
-          </td>
-        </tr>
-        <!-- Add more rows as needed -->
-      </tbody>
-    </table>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-300 rounded shadow-md">
+        <thead class="bg-gray-100 border-b border-gray-300">
+          <tr>
+            <th class="py-2 px-4 text-left">ID</th>
+            <th class="py-2 px-4 text-left">Name</th>
+            <th class="py-2 px-4 text-left">Phone</th>
+            <th class="py-2 px-4 text-left">Email</th>
+            <th class="py-2 px-4 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr>
+            <td class="py-2 px-4 border-b">1</td>
+            <td class="py-2 px-4 border-b">Jane Doe</td>
+            <td class="py-2 px-4 border-b">0706083697</td>
+            <td class="py-2 px-4 border-b">jane.doe@example.com</td>
+            <td class="py-2 px-4 border-b">
+              <button class="bg-blue-500 text-white py-1 px-2 rounded hover:bg-blue-600 mr-2 mb-1">Edit</button>
+              <button class="bg-green-500 text-white py-1 px-2 rounded hover:bg-grren-600 mr-2 mb-1">Contact</button>
+              <button class="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600 mr-2 mb-1">Delete</button>
+            </td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
   
     <!-- Pagination -->
     <div class="mt-4 flex justify-between items-center">
