@@ -20,7 +20,7 @@ interface Sms {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-
+  isModalOpen = false;
   alldashitems: DashboardItems[] = [
     { title: 'All Customers', item_val: 160, scale: 150 },
     { title: 'Recent Chats', item_val: 150, scale: 140 },
@@ -37,4 +37,8 @@ export class DashboardComponent {
     { date:'2024-08-03', time: '11:00:00', contact: 'Recent Chats', body: "This is a test date", status: "Resolved" },
     { date:'2024-08-03', time: '11:30:00', contact: 'Recent Sales', body: "This is a test date", status: "Resolved" }
   ];
+
+  toggleModal() {
+    this.isModalOpen = !this.isModalOpen;
+  }
 }
