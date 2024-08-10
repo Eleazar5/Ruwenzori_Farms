@@ -23,13 +23,9 @@ export class DashboardComponent {
   isModalOpen = false;
   alldashitems: DashboardItems[] = [
     { title: 'All Customers', item_val: 160, scale: 150 },
-    { title: 'Recent Chats', item_val: 150, scale: 140 },
     { title: 'Recent Sales', item_val: 200, scale: 180 },
-    { title: 'Farmer Goals', item_val: 130, scale: 120 },
-    { title: 'Recent Adverts', item_val: 40, scale: 30 },
     { title: 'Partners', item_val: 30, scale: 20 },
     { title: 'Recent Payables', item_val: 10, scale: 20 },
-    { title: 'Sale Requests', item_val: 10, scale: 20 }
   ];
 
   messages: Sms[] = [

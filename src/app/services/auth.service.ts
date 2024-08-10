@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { HttpService } from './http.service';
 import { Router } from '@angular/router';
 import { catchError, map } from 'rxjs/operators';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class AuthService {
 
   constructor(
     private httpService: HttpService,
-    private router: Router
+    private router: Router,
+    private storageService: StorageService
   ) { }
 
   login(postData: any): Observable<any> {
@@ -30,13 +32,8 @@ export class AuthService {
 		return this.httpService.verify_token_req('auth/authenticated', postData);
 	}
   
-
-  getToken(): string | null {
-    return localStorage.getItem('userToken');
-  }
-  
   logout(){
-    localStorage.removeItem('userToken');
+    this.storageService.clearData();
     this.router.navigate(['/login']);
   }
 

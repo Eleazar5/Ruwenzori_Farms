@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NotificationsService } from '../services/notifications.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-login-otp',
@@ -23,17 +24,18 @@ export class LoginOtpComponent implements OnInit{
     private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService,
-    private notifyService: NotificationsService
+    private notifyService: NotificationsService,
+    private storageService: StorageService
   ) {}
 
   ngOnInit(): void {
-    this.email = localStorage.getItem('userMail');
+    this.email = this.storageService.getData('userMail');
     this.startCountdown();
     this.checkAuth();
   }
 
   checkAuth(): void {
-    const token = this.authService.getToken();
+    const token = this.storageService.getData('userToken');
 
     this.authService.verify_validtoken(token).subscribe(
       (res: any) => {
@@ -106,8 +108,9 @@ export class LoginOtpComponent implements OnInit{
           // this.errorMessage=res.errorDesc;
           this.notifyService.showWarning(res.errorDesc)
         }else{
-          localStorage.removeItem('userMail');
-          localStorage.setItem('userToken', res.token);
+          console.log(res)
+          this.storageService.storeItem('userToken', res.token)
+          this.storageService.storeItem('userData', JSON.stringify(res.user))
           this.router.navigate(['/index']);
         }
       },  

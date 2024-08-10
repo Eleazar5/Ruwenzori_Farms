@@ -28,7 +28,8 @@ const routes: Routes = [
     component: ResetComponent 
   },
   { 
-    path: 'index', 
+    path: 'index',
+    canActivate: [authGuard], 
     component: HomepageComponent, children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'customers', pathMatch: 'full', component: CustomersComponent },
