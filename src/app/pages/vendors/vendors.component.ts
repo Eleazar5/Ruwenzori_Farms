@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ReqService } from 'src/app/services/req.service';
 
 @Component({
   selector: 'app-vendors',
@@ -9,10 +10,30 @@ export class VendorsComponent {
   isModalOpen = false;
   isDeleteModalOpen = false;
   deleteItem:string = '';
+  vendors: any;
+
+  constructor(
+    private reqService: ReqService,
+  ) {}
+
+  ngOnInit(): void {
+    this.getvendors(); 
+  }
 
   toggleDeleteModal(id: any) {
     this.deleteItem = id;
     this.isDeleteModalOpen = !this.isDeleteModalOpen;
+  }
+
+  getvendors(){
+    this.reqService.vendors().subscribe(
+      (res: any) => {        
+        this.vendors = res.data;
+      },  
+      (error: any) => {         
+        console.log(error)
+      }
+    );
   }
 
   deleteItems(confirm: boolean){
