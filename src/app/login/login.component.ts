@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
+    private storageService: StorageService,
     private router: Router
   ) {  }
 
@@ -23,7 +25,7 @@ export class LoginComponent {
   }
 
   checkAuth(): void {
-    const token = this.authService.getToken();
+    const token = this.storageService.getData('userToken');
 
     this.authService.verify_validtoken(token).subscribe(
       (res: any) => {
@@ -61,8 +63,7 @@ export class LoginComponent {
           if(res.success == 0) {
             this.errorMessage=res.errorDesc;
           }else{
-            //this.router.navigate(['/otp_verification'], { queryParams: { email: this.username } });
-            localStorage.setItem('userMail', this.username);
+            this.storageService.storeItem('userMail', this.username)
             this.router.navigate(['/otp_verification']);
           }
         },  
