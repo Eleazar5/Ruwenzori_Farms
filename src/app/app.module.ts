@@ -30,6 +30,7 @@ import { VendorsComponent } from './pages/vendors/vendors.component';
 import { SalesComponent } from './pages/sales/sales.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { MessagesComponent } from './pages/messages/messages.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MessagesComponent } from './pages/messages/messages.component';
     VendorsComponent,
     SalesComponent,
     NotificationsComponent,
-    MessagesComponent
+    MessagesComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

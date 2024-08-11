@@ -3,22 +3,21 @@ import { ReqService } from 'src/app/services/req.service';
 import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
-  selector: 'app-customers',
-  templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.scss']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class CustomersComponent {
+export class ProductsComponent {
   isModalOpen = false;
   isDeleteModalOpen = false;
   deleteItem:string = '';
-  customers: any;
+  products:any;
 
-  customerData: object = {}
+  productData: object = {}
 
-  email: string = '';
-  firstname: string = '';
-  lastname: string = '';
-  phone_number: string = '';
+  productname: string = '';
+  unitprice: string = '';
+  total_quantity: string = '';
 
   constructor(
     private reqService: ReqService,
@@ -26,9 +25,8 @@ export class CustomersComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getcustomers(); 
+    this.getproducts(); 
   }
-
   toggleModal() {
     this.isModalOpen = !this.isModalOpen;
   }
@@ -38,10 +36,10 @@ export class CustomersComponent {
     this.isDeleteModalOpen = !this.isDeleteModalOpen;
   }
 
-  getcustomers(){
-    this.reqService.customers().subscribe(
+  getproducts(){
+    this.reqService.products().subscribe(
       (res: any) => {        
-        this.customers = res.data;
+        this.products = res.data;
       },  
       (error: any) => {         
         console.log(error)
@@ -49,14 +47,13 @@ export class CustomersComponent {
     );
   }
 
-  saveCustomer(){
-    this.customerData = {
-      "email" : this.email,
-      "firstname" : this.firstname,
-      "lastname" : this.lastname,
-      "phone_number" : this.phone_number
+  saveProduct(){
+    this.productData = {
+      "productname" : this.productname,
+      "unit_price" : this.unitprice,
+      "total_quantity" : this.total_quantity
     } 
-    this.reqService.savecustomers(this.customerData).subscribe(
+    this.reqService.saveproduct(this.productData).subscribe(
       (res: any) => {        
         if(res.success == 1){
           this.toastService.showSuccess(res.errorDesc);
