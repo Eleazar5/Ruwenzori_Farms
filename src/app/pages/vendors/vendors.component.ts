@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ReqService } from 'src/app/services/req.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-vendors',
@@ -12,12 +13,24 @@ export class VendorsComponent {
   deleteItem:string = '';
   vendors: any;
 
+  vendorData: object = {}
+
+  email: string = '';
+  firstname: string = '';
+  lastname: string = '';
+  phone: string = '';
+
   constructor(
     private reqService: ReqService,
+    private toastService: ToastService,
   ) {}
 
   ngOnInit(): void {
     this.getvendors(); 
+  }
+
+  toggleModal() {
+    this.isModalOpen = !this.isModalOpen;
   }
 
   toggleDeleteModal(id: any) {
@@ -29,6 +42,30 @@ export class VendorsComponent {
     this.reqService.vendors().subscribe(
       (res: any) => {        
         this.vendors = res.data;
+      },  
+      (error: any) => {         
+        console.log(error)
+      }
+    );
+  }
+
+  saveVendor(){
+    this.vendorData = {
+      "email" : this.email,
+      "firstname" : this.firstname,
+      "lastname" : this.lastname,
+      "phone" : this.phone
+    } 
+    this.reqService.savevendor(this.vendorData).subscribe(
+      (res: any) => {        
+        if(res.success == 1){
+          this.toastService.showSuccess(res.errorDesc);
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        }else{
+          this.toastService.showError(res.errorDesc);
+        }
       },  
       (error: any) => {         
         console.log(error)

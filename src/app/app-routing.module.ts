@@ -15,6 +15,7 @@ import { VendorsComponent } from './pages/vendors/vendors.component';
 import { SalesComponent } from './pages/sales/sales.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { MessagesComponent } from './pages/messages/messages.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 import { authGuard } from './guards/auth.guard';
 
@@ -36,6 +37,7 @@ const routes: Routes = [
       { path: 'vendors', pathMatch: 'full', component: VendorsComponent },
       { path: 'sales', pathMatch: 'full', component: SalesComponent },
       { path: 'profile', pathMatch: 'full', component: ProfileComponent },
+      { path: 'products', pathMatch: 'full', component: ProductsComponent },
       { path: 'messages', pathMatch: 'full', component: MessagesComponent },
       { path: 'notifications', pathMatch: 'full', component: NotificationsComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
