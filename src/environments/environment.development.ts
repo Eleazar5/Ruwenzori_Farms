@@ -1,5 +1,5 @@
 export const environment = {
-    apiUrl: 'http://192.168.0.104:3004/',
+    apiUrl: 'http://192.168.0.100:3004/',
     url: 'https://ruwenzori-farms.vercel.app/',
     email: 'eleazarsimba5@gmail.com',
     title: 'Ruwenzori Farms',

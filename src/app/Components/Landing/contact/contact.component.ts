@@ -37,26 +37,27 @@ export class ContactComponent implements OnInit, AfterViewInit {
       if (tweetContainer && twttr) {
         this.renderer.setAttribute(tweetContainer, 'data-tweet-limit', '1');
         this.renderer.setAttribute(tweetContainer, 'data-theme', 'light');
-        // twttr.widgets.createTimeline(
-        //   {
-        //     sourceType: 'profile',
-        //     screenName: 'eleazar_simba'
-        //   },
-        //   tweetContainer,
-        //   {
-        //     tweetLimit: 1,
-        //     chrome: 'noheader nofooter noborders',
-        //     theme: 'light'
-        //   }
-        // );
-        twttr.widgets.createTweet(
-          '1792239147387609112', 
+        twttr.widgets.createTimeline(
+          {
+            sourceType: 'profile',
+            screenName: 'eleazar_simba'
+          },
           tweetContainer,
           {
-            theme: 'light',
-            conversation: 'none',
+            tweetLimit: 1,
+            chrome: 'noheader nofooter noborders',
+            theme: 'light'
           }
-        ).then((el: HTMLElement) => {
+        )
+        // twttr.widgets.createTweet(
+        //   '1792239147387609112', 
+        //   tweetContainer,
+        //   {
+        //     theme: 'light',
+        //     conversation: 'none',
+        //   }
+        // )
+        .then((el: HTMLElement) => {
           console.log('Tweet displayed.');
         }).catch((err: any) => {
           console.error('Error displaying tweet:', err);

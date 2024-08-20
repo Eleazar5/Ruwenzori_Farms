@@ -8,17 +8,19 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./customers.component.scss']
 })
 export class CustomersComponent {
-  isModalOpen = false;
-  isDeleteModalOpen = false;
-  deleteItem:string = '';
-  customers: any;
-
-  customerData: object = {}
-
-  email: string = '';
-  firstname: string = '';
-  lastname: string = '';
-  phone_number: string = '';
+  isModalOpen:boolean = false;
+  isEditModalOpen:boolean = false;
+  isDeleteModalOpen:boolean = false;
+  customers: any[] = [];
+  customerId: number | null = null;
+  deleteItem: any = null;
+  customerData: any = {
+    id: null,
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone_number: ''
+  };
 
   constructor(
     private reqService: ReqService,
@@ -31,6 +33,46 @@ export class CustomersComponent {
 
   toggleModal() {
     this.isModalOpen = !this.isModalOpen;
+    this.resetForm();
+  }
+
+
+  toggleEditModal(id: number | null) {
+    this.isEditModalOpen = !this.isEditModalOpen;
+    if (id) {
+      this.customerId = id;
+      this.fetchCustomerData(id);
+    } else {
+      this.resetForm();
+    }
+  }
+  
+  fetchCustomerData(id: number) {
+    this.reqService.getCustomerById(id).subscribe((data: any) => {
+      this.customerData = data.data;
+    });
+  }
+
+  resetForm() {
+    this.customerData = {
+      id: null,
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone_number: ''
+    };
+  }
+
+  updateCustomer() {
+    if (this.customerId) {
+      this.reqService.updateCustomer(this.customerId, this.customerData).subscribe(() => {
+        this.toastService.showSuccess("Customer updated successfully");
+        this.toggleEditModal(null);
+        this.getcustomers();  // Refresh customer list
+      }, error => {
+        this.toastService.showError("Error updating customer");
+      });
+    }
   }
 
   toggleDeleteModal(id: any) {
@@ -38,48 +80,60 @@ export class CustomersComponent {
     this.isDeleteModalOpen = !this.isDeleteModalOpen;
   }
 
-  getcustomers(){
+  getcustomers() {
     this.reqService.customers().subscribe(
       (res: any) => {        
         this.customers = res.data;
       },  
       (error: any) => {         
-        console.log(error)
+        this.toastService.showError("Error fetching customers");
       }
     );
   }
 
-  saveCustomer(){
-    this.customerData = {
-      "email" : this.email,
-      "firstname" : this.firstname,
-      "lastname" : this.lastname,
-      "phone_number" : this.phone_number
-    } 
+  saveCustomer() {
     this.reqService.savecustomers(this.customerData).subscribe(
       (res: any) => {        
-        if(res.success == 1){
+        if (res.success == 1) {
           this.toastService.showSuccess(res.errorDesc);
-          setTimeout(() => {
-            window.location.reload();
-          }, 2000);
-        }else{
+          this.toggleModal();
+          this.getcustomers();  // Refresh customer list
+        } else {
           this.toastService.showError(res.errorDesc);
         }
       },  
       (error: any) => {         
-        console.log(error)
+        this.toastService.showError("Error saving customer");
       }
     );
   }
 
-  deleteItems(confirm: boolean){
-    if(confirm){
-      console.log('You have deleted '+this.deleteItem)
-      this.toggleDeleteModal(confirm)
-    }else{
-      this.toggleDeleteModal(confirm)
-      console.log('Canceled deletion of '+this.deleteItem)
+  deleteItems(confirm: boolean) {
+    if (confirm && this.deleteItem) {
+      this.reqService.deletecustomer(this.deleteItem).subscribe(
+        (res: any) => {        
+          if (res.success == 1) {
+            this.toastService.showSuccess(res.errorDesc);
+            this.getcustomers();  // Refresh customer list
+          } else {
+            this.toastService.showError(res.errorDesc);
+          }
+          this.toggleDeleteModal(null);
+        },  
+        (error: any) => {         
+          this.toastService.showError("Error deleting customer");
+        }
+      );
+    } else {
+      this.toggleDeleteModal(null);
+    }
+  }
+
+  contactCustomer(phoneNumber: any) {
+    if (phoneNumber) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      this.toastService.showError("Invalid phone number");
     }
   }
 }
