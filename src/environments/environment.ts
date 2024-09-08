@@ -1,5 +1,5 @@
 export const environment = {
-    apiUrl: 'http://192.168.0.100:3004/',
+    apiUrl: 'https://marlin-relevant-tightly.ngrok-free.app/',
     url: 'https://ruwenzori-farms.vercel.app/',
     email: 'eleazarsimba5@gmail.com',
     title: 'Ruwenzori Farms',
