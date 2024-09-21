@@ -1,13 +1,33 @@
+.intropage {
+  background-image: url('../../../assets/nature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  position: relative;
+}
+
+section {
+  background: rgba(255, 255, 255, 0); 
+  padding: 20px;
+  margin: 20px 0; 
+  position: relative; 
+  z-index: 1; 
+}
+
+
 @media (max-width: 768px) {
   .hidden {
     display: none;
   }
+
   nav ul {
     flex-direction: column;
     background-color: #f8f9fa;
     border-radius: 0.25rem;
     padding: 1rem;
   }
+
   nav ul li {
     margin: 0.5rem 0;
   }
@@ -15,10 +35,9 @@
 
 a.active {
   color: #007bff;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
-/* Additional styling for better appearance */
 nav {
   transition: all 0.3s ease-in-out;
 }
